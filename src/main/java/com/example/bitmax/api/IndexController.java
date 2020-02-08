@@ -13,4 +13,10 @@ public class IndexController {
         return "Hello Spring Boot";
     }
 
+    @GetMapping("/teste")
+    public String teste(){
+        return "Hello Spring Boot1";
+    }
+
+
 }
