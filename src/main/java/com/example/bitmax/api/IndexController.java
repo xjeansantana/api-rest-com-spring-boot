@@ -7,16 +7,24 @@ import org.springframework.web.bind.annotation.*;
 public class IndexController {
 
     @GetMapping
-    public String get(){
+    public String get() {
         return "Get Spring Boot";
     }
 
-    @GetMapping("/login")
-    public String login(@RequestParam("login") String login, @RequestParam("senha") String senha){
-        return " Login " + login +", senha " + senha;
+    @GetMapping("/login/{login}/senha/{senha}")
+    public String login(@PathVariable("login") String login, @PathVariable("senha") String senha) {
+        return " Login " + login + ", senha " + senha;
     }
 
+    @GetMapping ("/releases/{id}")
+    public String getReleasesById(@PathVariable("id") Long id) {
+        return "Releases By id " + id;
+    }
 
+    @GetMapping("/releases/tipo/{tipo}")
+    public String getReleasesById(@PathVariable("tipo") String tipo) {
+        return "Lista de Releases " + tipo;
+    }
 
 
 }
