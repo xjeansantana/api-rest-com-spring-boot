@@ -16,7 +16,7 @@ public class ReleasesController {
     private ReleaseService service;
 
     @GetMapping
-    public List<Release> get() {
+    public Iterable<Release> get() {
         return service.getRelease();
     }
 

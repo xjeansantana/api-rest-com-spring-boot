@@ -1,8 +1,19 @@
 package com.example.bitmax.domain;
 
+import javax.persistence.*;
+
+@Entity(name = "releases")
 public class Release {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String nome;
+
+    private  Release(){
+
+    }
 
     public Release(Long id, String nome) {
         this.id = id;
@@ -25,5 +36,4 @@ public class Release {
         this.nome = nome;
     }
 
-    private String nome;
 }
