@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReleaseService {
@@ -14,7 +15,10 @@ public class ReleaseService {
 
     public Iterable<Release> getRelease() {
         return rep.findAll();
+    }
 
+    public Optional<Release> getReleaseById(Long id) {
+        return rep.findById(id);
     }
 
     public List<Release> getReleaseFake() {
@@ -25,4 +29,6 @@ public class ReleaseService {
 
         return releases;
     }
+
+
 }
