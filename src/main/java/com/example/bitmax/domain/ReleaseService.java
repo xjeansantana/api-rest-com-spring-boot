@@ -62,11 +62,13 @@ public class ReleaseService {
 
     }
 
-    public void delete(Long id) {
+    public boolean delete(Long id) {
 
         if (getReleaseById(id).isPresent()) {
             rep.deleteById(id);
+            return true;
         }
+        return false;
 
     }
 }
