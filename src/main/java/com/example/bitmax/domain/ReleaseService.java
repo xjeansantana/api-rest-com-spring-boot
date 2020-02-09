@@ -32,8 +32,11 @@ public class ReleaseService {
     }
 
 
-    public Release insert(Release release) {
-        return rep.save(release);
+    public ReleaseDTO insert(Release release) {
+
+        Assert.isNull(release.getId(), "Não foi possível inserir o registro");
+
+        return ReleaseDTO.create(rep.save(release));
     }
 
     public ReleaseDTO update(Release release, Long id) {

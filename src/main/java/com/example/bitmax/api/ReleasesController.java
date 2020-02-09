@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,9 +46,21 @@ public class ReleasesController {
     }
 
     @PostMapping
-    public String post(@RequestBody Release release) {
-        Release s = service.insert(release);
-        return "Release inserida com sucesso: " + s.getId();
+    public ResponseEntity post(@RequestBody Release release) {
+        try {
+            ReleaseDTO s = service.insert(release);
+
+            URI location = getUri(s.getId());
+
+            return ResponseEntity.created(location).build();
+        } catch (Exception ex) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    private URI getUri(Long id) {
+        return ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(id).toUri();
     }
 
     @PutMapping("/{id}")
