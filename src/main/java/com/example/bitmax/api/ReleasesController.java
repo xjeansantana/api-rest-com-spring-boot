@@ -3,12 +3,8 @@ package com.example.bitmax.api;
 import com.example.bitmax.domain.Release;
 import com.example.bitmax.domain.ReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -27,5 +23,15 @@ public class ReleasesController {
         return service.getReleaseById(id);
     }
 
+    @GetMapping("/tipo/{tipo}")
+    public Iterable<Release> getReleaseByTipo(@PathVariable("tipo") String tipo) {
+        return service.getReleaseByTipo(tipo);
+    }
+
+    @PostMapping
+    public String post(@RequestBody Release release) {
+        Release s = service.save(release);
+        return "Release salva com sucesso: " + s.getId();
+    }
 
 }

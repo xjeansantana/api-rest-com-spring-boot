@@ -21,6 +21,10 @@ public class ReleaseService {
         return rep.findById(id);
     }
 
+    public Iterable<Release> getReleaseByTipo(String tipo) {
+        return rep.findByTipo(tipo);
+    }
+
     public List<Release> getReleaseFake() {
         List<Release> releases = new ArrayList<>();
         releases.add(new Release(1L, "Versão 1.00"));
@@ -31,4 +35,7 @@ public class ReleaseService {
     }
 
 
+    public Release save(Release release) {
+        return rep.save(release);
+    }
 }

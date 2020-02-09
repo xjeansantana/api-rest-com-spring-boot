@@ -10,6 +10,7 @@ public class Release {
     private Long id;
 
     private String nome;
+    private String tipo;
 
     private  Release(){
 
@@ -36,4 +37,11 @@ public class Release {
         this.nome = nome;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }
