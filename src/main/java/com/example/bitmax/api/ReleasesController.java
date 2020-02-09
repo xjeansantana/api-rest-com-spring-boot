@@ -3,6 +3,8 @@ package com.example.bitmax.api;
 import com.example.bitmax.domain.Release;
 import com.example.bitmax.domain.ReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -14,8 +16,9 @@ public class ReleasesController {
     private ReleaseService service;
 
     @GetMapping
-    public Iterable<Release> get() {
-        return service.getRelease();
+    public ResponseEntity<Iterable<Release>> get() {
+        return ResponseEntity.ok(service.getRelease());
+      // return new ResponseEntity<>(service.getRelease(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
