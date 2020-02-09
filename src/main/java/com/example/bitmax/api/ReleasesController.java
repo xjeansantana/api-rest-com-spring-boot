@@ -18,12 +18,23 @@ public class ReleasesController {
     @GetMapping
     public ResponseEntity<Iterable<Release>> get() {
         return ResponseEntity.ok(service.getRelease());
-      // return new ResponseEntity<>(service.getRelease(), HttpStatus.OK);
+        // return new ResponseEntity<>(service.getRelease(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Optional<Release> get(@PathVariable("id") Long id) {
-        return service.getReleaseById(id);
+    public ResponseEntity get(@PathVariable("id") Long id) {
+        Optional<Release> release = service.getReleaseById(id);
+
+        return release
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+
+//        if (release.isPresent()){
+//            return ResponseEntity.ok(release.get());
+//        }else {
+//            return ResponseEntity.notFound().build();
+//        }
+
     }
 
     @GetMapping("/tipo/{tipo}")
