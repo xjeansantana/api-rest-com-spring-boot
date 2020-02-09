@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static junit.framework.TestCase.*;
 
 
-
+import java.util.List;
 import java.util.Optional;
 
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
@@ -27,7 +27,7 @@ class BitmaxApplicationTests {
     private ReleaseService service;
 
     @Test
-    public void teste1() {
+    public void testeSave() {
         Release release = new Release();
         release.setNome("5.00");
         release.setTipo("Empresarial");
@@ -55,15 +55,15 @@ class BitmaxApplicationTests {
         assertFalse((service.getReleaseById(id).isPresent()));
 
 
-
-
     }
 
     private void assertTrue(boolean present) {
     }
 
     @Test
-    public void teste2() {
+    public void testeLista() {
+        List<ReleaseDTO> releases = service.getRelease();
+        assertEquals(31, releases.size());
 
     }
 
