@@ -17,31 +17,27 @@ public class ReleasesController {
     @Autowired
     private ReleaseService service;
 
+
     @GetMapping
     public ResponseEntity<List<ReleaseDTO>> get() {
         return ResponseEntity.ok(service.getRelease());
         // return new ResponseEntity<>(service.getRelease(), HttpStatus.OK);
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        Optional<Release> release = service.getReleaseById(id);
+        Optional<ReleaseDTO> release = service.getReleaseById(id);
 
         return release
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
 
-//        if (release.isPresent()){
-//            return ResponseEntity.ok(release.get());
-//        }else {
-//            return ResponseEntity.notFound().build();
-//        }
-
     }
 
     @GetMapping("/tipo/{tipo}")
     public ResponseEntity getReleaseByTipo(@PathVariable("tipo") String tipo) {
-        List<ReleaseDTO> releases= service.getReleaseByTipo(tipo);
+        List<ReleaseDTO> releases = service.getReleaseByTipo(tipo);
         return releases.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(releases);
@@ -55,7 +51,7 @@ public class ReleasesController {
 
     @PutMapping("/{id}")
     public String put(@PathVariable("id") Long id, @RequestBody Release release) {
-        Release s = service.update(release, id);
+        ReleaseDTO s = service.update(release, id);
         return "Release Atualizada com sucesso: " + s.getId();
     }
 

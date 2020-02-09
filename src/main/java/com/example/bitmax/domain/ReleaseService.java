@@ -18,23 +18,17 @@ public class ReleaseService {
     private ReleaseRepository rep;
 
     public List<ReleaseDTO> getRelease() {
-        List<Release> releases = rep.findAll();
 
-        return rep.findAll().stream().map(ReleaseDTO::new).collect(Collectors.toList());
+        return rep.findAll().stream().map(ReleaseDTO::create).collect(Collectors.toList());
 
-//        List<ReleaseDTO> list = new ArrayList<>();
-//        for (Release r : releases){
-//            list.add(new ReleaseDTO(r));
-//
-//        } return list;
     }
 
-    public Optional<Release> getReleaseById(Long id) {
-        return rep.findById(id);
+    public Optional<ReleaseDTO> getReleaseById(Long id) {
+        return rep.findById(id).map(ReleaseDTO::create);
     }
 
     public List<ReleaseDTO> getReleaseByTipo(String tipo) {
-        return rep.findByTipo(tipo).stream().map(ReleaseDTO::new).collect(Collectors.toList());
+        return rep.findByTipo(tipo).stream().map(ReleaseDTO::create).collect(Collectors.toList());
     }
 
 
@@ -42,11 +36,11 @@ public class ReleaseService {
         return rep.save(release);
     }
 
-    public Release update(Release release, Long id) {
+    public ReleaseDTO update(Release release, Long id) {
         Assert.notNull(id, "Não foi possível atualizar o registro");
 
         //buscar a release no banco de dados
-        Optional<Release> optional = getReleaseById(id);
+        Optional<Release> optional = rep.findById(id);
         if (optional.isPresent()) {
             Release db = optional.get();
             //Copiar as propriedades
@@ -56,7 +50,8 @@ public class ReleaseService {
 
             //Atualiza o carro
             rep.save(db);
-            return db;
+
+            return ReleaseDTO.create(db);
         } else {
             throw new RuntimeException("Não foi possível atualizar o registro");
         }
@@ -64,11 +59,9 @@ public class ReleaseService {
     }
 
     public void delete(Long id) {
-        Optional<Release> release = getReleaseById(id);
-        if (release.isPresent()) {
+
+        if (getReleaseById(id).isPresent()) {
             rep.deleteById(id);
-        } else {
-            throw new RuntimeException("Não existe registros no banco de dados");
         }
 
     }

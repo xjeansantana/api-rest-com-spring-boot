@@ -2,6 +2,7 @@ package com.example.bitmax.domain.dto;
 
 import com.example.bitmax.domain.Release;
 import lombok.Data;
+import org.modelmapper.ModelMapper;
 
 @Data
 public class ReleaseDTO {
@@ -9,9 +10,8 @@ public class ReleaseDTO {
     private String nome;
     private String tipo;
 
-    public ReleaseDTO(Release r) {
-        this.id = r.getId();
-        this.nome = r.getNome();
-        this.tipo = r.getTipo();
+    public static ReleaseDTO create(Release r) {
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper.map(r, ReleaseDTO.class);
     }
 }
