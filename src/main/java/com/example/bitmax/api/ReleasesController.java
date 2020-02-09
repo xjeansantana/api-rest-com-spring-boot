@@ -30,8 +30,14 @@ public class ReleasesController {
 
     @PostMapping
     public String post(@RequestBody Release release) {
-        Release s = service.save(release);
+        Release s = service.insert(release);
         return "Release salva com sucesso: " + s.getId();
+    }
+
+    @PutMapping("/{id}")
+    public String put(@PathVariable("id") Long id, @RequestBody Release release) {
+        Release s = service.update(release, id);
+        return "Release Atualizada com sucesso: " + s.getId();
     }
 
 }

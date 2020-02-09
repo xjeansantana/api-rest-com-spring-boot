@@ -1,7 +1,9 @@
 package com.example.bitmax.domain;
 
+import org.aspectj.bridge.IMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +37,28 @@ public class ReleaseService {
     }
 
 
-    public Release save(Release release) {
+    public Release insert(Release release) {
         return rep.save(release);
+    }
+
+    public Release update(Release release, Long id) {
+        Assert.notNull(id, "Não foi possível atualizar o registro");
+
+        //buscar a release no banco de dados
+        Optional<Release> optional = getReleaseById(id);
+        if (optional.isPresent()) {
+            Release db = optional.get();
+            //Copiar as propriedades
+            db.setNome(release.getNome());
+            db.setTipo(release.getTipo());
+            System.out.println("Release id " + db.getId());
+
+            //Atualiza o carro
+            rep.save(db);
+            return db;
+        } else {
+            throw new RuntimeException("Não foi possível atualizar o registro");
+        }
+
     }
 }
