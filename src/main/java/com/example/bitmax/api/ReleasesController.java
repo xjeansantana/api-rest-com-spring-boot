@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -38,8 +39,11 @@ public class ReleasesController {
     }
 
     @GetMapping("/tipo/{tipo}")
-    public Iterable<Release> getReleaseByTipo(@PathVariable("tipo") String tipo) {
-        return service.getReleaseByTipo(tipo);
+    public ResponseEntity getReleaseByTipo(@PathVariable("tipo") String tipo) {
+        List<Release> releases= service.getReleaseByTipo(tipo);
+        return releases.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(releases);
     }
 
     @PostMapping

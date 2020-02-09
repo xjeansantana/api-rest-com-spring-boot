@@ -23,17 +23,8 @@ public class ReleaseService {
         return rep.findById(id);
     }
 
-    public Iterable<Release> getReleaseByTipo(String tipo) {
+    public List<Release> getReleaseByTipo(String tipo) {
         return rep.findByTipo(tipo);
-    }
-
-    public List<Release> getReleaseFake() {
-        List<Release> releases = new ArrayList<>();
-        releases.add(new Release(1L, "Versão 1.00"));
-        releases.add(new Release(2L, "Versão 2.00"));
-        releases.add(new Release(3L, "Versão 3.00"));
-
-        return releases;
     }
 
 
@@ -64,7 +55,7 @@ public class ReleaseService {
 
     public void delete(Long id) {
         Optional<Release> release = getReleaseById(id);
-        if (release.isPresent()){
+        if (release.isPresent()) {
             rep.deleteById(id);
         } else {
             throw new RuntimeException("Não existe registros no banco de dados");
