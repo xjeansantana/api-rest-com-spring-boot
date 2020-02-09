@@ -1,5 +1,6 @@
 package com.example.bitmax.domain;
 
+import com.example.bitmax.domain.dto.ReleaseDTO;
 import org.aspectj.bridge.IMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import org.springframework.util.Assert;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ReleaseService {
@@ -15,16 +17,24 @@ public class ReleaseService {
     @Autowired
     private ReleaseRepository rep;
 
-    public Iterable<Release> getRelease() {
-        return rep.findAll();
+    public List<ReleaseDTO> getRelease() {
+        List<Release> releases = rep.findAll();
+
+        return rep.findAll().stream().map(ReleaseDTO::new).collect(Collectors.toList());
+
+//        List<ReleaseDTO> list = new ArrayList<>();
+//        for (Release r : releases){
+//            list.add(new ReleaseDTO(r));
+//
+//        } return list;
     }
 
     public Optional<Release> getReleaseById(Long id) {
         return rep.findById(id);
     }
 
-    public List<Release> getReleaseByTipo(String tipo) {
-        return rep.findByTipo(tipo);
+    public List<ReleaseDTO> getReleaseByTipo(String tipo) {
+        return rep.findByTipo(tipo).stream().map(ReleaseDTO::new).collect(Collectors.toList());
     }
 
 

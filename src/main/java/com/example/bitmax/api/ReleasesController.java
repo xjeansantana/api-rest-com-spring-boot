@@ -2,6 +2,7 @@ package com.example.bitmax.api;
 
 import com.example.bitmax.domain.Release;
 import com.example.bitmax.domain.ReleaseService;
+import com.example.bitmax.domain.dto.ReleaseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class ReleasesController {
     private ReleaseService service;
 
     @GetMapping
-    public ResponseEntity<Iterable<Release>> get() {
+    public ResponseEntity<List<ReleaseDTO>> get() {
         return ResponseEntity.ok(service.getRelease());
         // return new ResponseEntity<>(service.getRelease(), HttpStatus.OK);
     }
@@ -40,7 +41,7 @@ public class ReleasesController {
 
     @GetMapping("/tipo/{tipo}")
     public ResponseEntity getReleaseByTipo(@PathVariable("tipo") String tipo) {
-        List<Release> releases= service.getReleaseByTipo(tipo);
+        List<ReleaseDTO> releases= service.getReleaseByTipo(tipo);
         return releases.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(releases);
