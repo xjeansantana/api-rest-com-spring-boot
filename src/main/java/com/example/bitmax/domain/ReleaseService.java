@@ -61,4 +61,14 @@ public class ReleaseService {
         }
 
     }
+
+    public void delete(Long id) {
+        Optional<Release> release = getReleaseById(id);
+        if (release.isPresent()){
+            rep.deleteById(id);
+        } else {
+            throw new RuntimeException("Não existe registros no banco de dados");
+        }
+
+    }
 }

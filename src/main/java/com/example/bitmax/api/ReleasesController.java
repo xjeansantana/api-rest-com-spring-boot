@@ -31,13 +31,19 @@ public class ReleasesController {
     @PostMapping
     public String post(@RequestBody Release release) {
         Release s = service.insert(release);
-        return "Release salva com sucesso: " + s.getId();
+        return "Release inserida com sucesso: " + s.getId();
     }
 
     @PutMapping("/{id}")
     public String put(@PathVariable("id") Long id, @RequestBody Release release) {
         Release s = service.update(release, id);
         return "Release Atualizada com sucesso: " + s.getId();
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") Long id) {
+        service.delete(id);
+        return "Registro deletado com sucesso";
     }
 
 }
