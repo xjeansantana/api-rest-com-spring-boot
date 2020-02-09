@@ -1,0 +1,32 @@
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('11.00L', 'Versão ', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'Empresarial');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+insert into releases (nome,descricao,data, url_foto,tipo) VALUES('1.00L', 'Versão 1', '1970-01-01 00:00:01', 'http://www.livroandroid.com.br/livro/carros/classicos/Tucker.png', 'NFe');
+
+

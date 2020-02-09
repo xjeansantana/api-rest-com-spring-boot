@@ -57,14 +57,31 @@ class BitmaxApplicationTests {
 
     }
 
-    private void assertTrue(boolean present) {
-    }
+
 
     @Test
     public void testeLista() {
         List<ReleaseDTO> releases = service.getRelease();
-        assertEquals(31, releases.size());
+        assertEquals(30, releases.size());
 
     }
+
+
+    @Test
+    public void testeListaPorTipo() {
+        assertEquals(15, service.getReleaseByTipo("Empresarial").size());
+        assertEquals(15, service.getReleaseByTipo("NFe").size());
+        assertEquals(0, service.getReleaseByTipo("xxx").size());
+    }
+
+    @Test
+    public void testeGet() {
+       Optional<ReleaseDTO> op = service.getReleaseById(11L);
+        assertTrue(op.isPresent());
+        ReleaseDTO r = op.get();
+        assertEquals("11.00L", r.getNome());
+
+    }
+
 
 }
