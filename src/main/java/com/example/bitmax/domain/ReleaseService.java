@@ -56,7 +56,8 @@ public class ReleaseService {
 
             return ReleaseDTO.create(db);
         } else {
-            throw new RuntimeException("Não foi possível atualizar o registro");
+            return null;
+//            throw new RuntimeException("Não foi possível atualizar o registro");
         }
 
     }

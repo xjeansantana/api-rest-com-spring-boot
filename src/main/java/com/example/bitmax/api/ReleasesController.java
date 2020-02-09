@@ -64,9 +64,14 @@ public class ReleasesController {
     }
 
     @PutMapping("/{id}")
-    public String put(@PathVariable("id") Long id, @RequestBody Release release) {
-        ReleaseDTO s = service.update(release, id);
-        return "Release Atualizada com sucesso: " + s.getId();
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Release release) {
+        release.setId(id);
+
+        ReleaseDTO r = service.update(release, id);
+        return r != null ?
+                ResponseEntity.ok(r) :
+                ResponseEntity.notFound().build();
+
     }
 
     @DeleteMapping("/{id}")
