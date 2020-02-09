@@ -21,7 +21,7 @@ import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class BitmaxApplicationTests {
+class ReleaseServiceTest {
 
     @Autowired
     private ReleaseService service;
